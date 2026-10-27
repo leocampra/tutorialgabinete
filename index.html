@@ -76,7 +76,7 @@
       padding: 0;
       display: grid;
       gap: 20px;
-      grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
     }
 
     .card {
@@ -89,9 +89,10 @@
       box-shadow: var(--sombra);
     }
 
+    /* Vídeos gravados em pé: o player ocupa quase a tela do celular sem passar dela. */
     .player {
       position: relative;
-      aspect-ratio: 16 / 9;
+      height: min(78vh, 78svh, 640px);
       background: #000;
     }
     .player video {
@@ -133,8 +134,8 @@
       <h1>Vídeos do Gabinete</h1>
       <p>Aprenda a usar o aplicativo do gabinete com vídeos curtos, um para cada função.</p>
       <div class="dica">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M18 12h.01"/></svg>
-        <span>No celular, toque em tela cheia e deite o aparelho para ver maior.</span>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        <span>Assista com o celular em pé. Toque em tela cheia para ver maior.</span>
       </div>
     </div>
   </header>
@@ -259,12 +260,12 @@
         });
       });
 
-      // Em tela cheia no celular, deita a tela (Android/Chrome; o iPhone gira sozinho no player dele).
+      // Em tela cheia no celular, mantém a tela em pé (Android/Chrome; o iPhone usa o player dele).
       function aoMudarTelaCheia() {
         var o = screen.orientation;
         if (!o || typeof o.lock !== 'function') return;
         if (document.fullscreenElement) {
-          o.lock('landscape').catch(function () {});
+          o.lock('portrait').catch(function () {});
         } else if (typeof o.unlock === 'function') {
           try { o.unlock(); } catch (e) {}
         }
