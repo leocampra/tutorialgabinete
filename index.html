@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Vídeos do Gabinete</title>
+  <meta name="description" content="Vídeos curtos que mostram, passo a passo, como usar o aplicativo do gabinete.">
+  <meta name="theme-color" content="#0f3a8c">
+  <style>
+    :root {
+      --azul: #0f3a8c;
+      --azul-claro: #e8eefb;
+      --fundo: #f3f5f9;
+      --cartao: #ffffff;
+      --texto: #172033;
+      --texto-suave: #4a5568;
+      --borda: #dde3ee;
+      --sombra: 0 1px 2px rgba(15, 23, 42, .06), 0 4px 16px rgba(15, 23, 42, .06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --azul: #7aa2f7;
+        --azul-claro: #1c2a48;
+        --fundo: #0e131c;
+        --cartao: #161d2a;
+        --texto: #e6eaf2;
+        --texto-suave: #a7b0c2;
+        --borda: #263147;
+        --sombra: 0 1px 2px rgba(0, 0, 0, .3);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.5;
+    }
+
+    .topo {
+      background: #0f3a8c;
+      color: #fff;
+      padding: 28px 16px 32px;
+      padding-top: max(28px, env(safe-area-inset-top));
+    }
+    .topo .conteudo { max-width: 1200px; margin: 0 auto; }
+    .topo h1 { margin: 0 0 6px; font-size: clamp(1.5rem, 4vw, 2.1rem); line-height: 1.2; }
+    .topo p { margin: 0; max-width: 60ch; opacity: .9; font-size: 1.05rem; }
+
+    .dica {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 16px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .12);
+      font-size: .95rem;
+      width: fit-content;
+      max-width: 100%;
+    }
+    .dica svg { flex: none; }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 24px 16px 48px; }
+
+    .secao + .secao { margin-top: 40px; }
+    .secao h2 { margin: 0 0 4px; font-size: 1.3rem; }
+    .secao > p { margin: 0 0 18px; color: var(--texto-suave); }
+
+    .lista {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: var(--cartao);
+      border: 1px solid var(--borda);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--sombra);
+    }
+
+    .player {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+    .player video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .corpo { padding: 14px 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+    .linha-titulo { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    .card h3 { margin: 0; font-size: 1.12rem; line-height: 1.3; }
+    .numero { color: var(--azul); font-variant-numeric: tabular-nums; margin-right: 4px; }
+    .duracao {
+      flex: none;
+      font-size: .82rem;
+      font-variant-numeric: tabular-nums;
+      color: var(--azul);
+      background: var(--azul-claro);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .card p { margin: 0; color: var(--texto-suave); font-size: .98rem; }
+
+    footer {
+      text-align: center;
+      color: var(--texto-suave);
+      font-size: .9rem;
+      padding: 0 16px 32px;
+      padding-bottom: max(32px, env(safe-area-inset-bottom));
+    }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <div class="conteudo">
+      <h1>Vídeos do Gabinete</h1>
+      <p>Aprenda a usar o aplicativo do gabinete com vídeos curtos, um para cada função.</p>
+      <div class="dica">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M18 12h.01"/></svg>
+        <span>No celular, toque em tela cheia e deite o aparelho para ver maior.</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="secao" aria-labelledby="titulo-admin">
+      <h2 id="titulo-admin">Aplicativo do Admin</h2>
+      <p>Como o Admin do gabinete configura e usa cada função.</p>
+      <ul class="lista">
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/01-visao-geral-admin.jpg"><source src="videos/01-visao-geral-admin.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">1.</span>Visão geral do aplicativo</h3><span class="duracao" aria-label="Duração">19:02</span></div>
+            <p>Criar a senha de 4 números, abrir um novo pedido, enviar ao gabinete, ver os avisos, cuidar dos usuários e aparelhos, as funções e o suporte.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/02-atendimento.jpg"><source src="videos/02-atendimento.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">2.</span>Atendimento</h3><span class="duracao" aria-label="Duração">5:49</span></div>
+            <p>As categorias com perguntas de triagem, o atendimento passo a passo (pessoa, assunto, pedido e prioridade) e o acompanhamento em Minhas tarefas.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/03-aniversarios-procurar-pessoa.jpg"><source src="videos/03-aniversarios-procurar-pessoa.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">3.</span>Aniversários e procurar pessoa</h3><span class="duracao" aria-label="Duração">1:51</span></div>
+            <p>Ativar a lista de aniversariantes do dia e procurar uma pessoa pelo nome ou telefone, mesmo digitando com erro.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/04-agenda.jpg"><source src="videos/04-agenda.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">4.</span>Agenda</h3><span class="duracao" aria-label="Duração">1:16</span></div>
+            <p>Ver a agenda por dia ou semana e marcar compromisso, sessão, visita, reunião ou gravação, com lembrete no celular de quem vai.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/05-comunicacao.jpg"><source src="videos/05-comunicacao.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">5.</span>Comunicação</h3><span class="duracao" aria-label="Duração">1:35</span></div>
+            <p>Ativar a fila da Comunicação, que recebe os casos resolvidos (só o resumo público, sem dados de saúde) para divulgar.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/06-contatos.jpg"><source src="videos/06-contatos.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">6.</span>Contatos</h3><span class="duracao" aria-label="Duração">1:47</span></div>
+            <p>Cadastrar lideranças, autoridades, órgãos, entidades e imprensa, com cargo, temas de interesse e etiquetas, e separar listas.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/07-documentos.jpg"><source src="videos/07-documentos.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">7.</span>Documentos</h3><span class="duracao" aria-label="Duração">0:54</span></div>
+            <p>Enviar arquivos (PDF, Word, imagem ou texto), criar pastas, escolher quem pode ver e procurar nos documentos do gabinete.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/08-envio-prefeitura.jpg"><source src="videos/08-envio-prefeitura.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">8.</span>Envio à prefeitura (protocolo)</h3><span class="duracao" aria-label="Duração">2:36</span></div>
+            <p>Registrar o protocolo do pedido na prefeitura e cada tentativa de cobrança (por onde, com quem falou e o resultado) até marcar como resolvido.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/09-legislativo.jpg"><source src="videos/09-legislativo.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">9.</span>Legislativo</h3><span class="duracao" aria-label="Duração">1:45</span></div>
+            <p>Cadastrar proposições (projeto de lei, requerimento, indicação, moção ou emenda), filtrar pela situação e escolher o responsável pelos prazos.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/10-oficios-assinatura.jpg"><source src="videos/10-oficios-assinatura.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">10.</span>Ofícios e assinatura</h3><span class="duracao" aria-label="Duração">2:40</span></div>
+            <p>Ativar os ofícios feitos a partir de modelos e encontrar, na tela inicial, as assinaturas que esperam pelo vereador.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/11-paineis.jpg"><source src="videos/11-paineis.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">11.</span>Painéis</h3><span class="duracao" aria-label="Duração">1:52</span></div>
+            <p>Os números do período (pedidos, resolvidos, por bairro e por responsável, prefeitura) e como baixar em PDF ou planilha.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/12-retorno-ao-cidadao.jpg"><source src="videos/12-retorno-ao-cidadao.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">12.</span>Retorno ao cidadão</h3><span class="duracao" aria-label="Duração">1:27</span></div>
+            <p>A fila do pós-atendimento: retornos positivos e negativos, cidadãos ainda não contatados e casos reabertos.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="secao" aria-labelledby="titulo-equipe">
+      <h2 id="titulo-equipe">Aplicativo da equipe</h2>
+      <p>O que vê quem trabalha no gabinete.</p>
+      <ul class="lista">
+        <li class="card">
+          <div class="player"><video controls playsinline preload="none" poster="capas/13-app-da-equipe.jpg"><source src="videos/13-app-da-equipe.mp4" type="video/mp4"></video></div>
+          <div class="corpo">
+            <div class="linha-titulo"><h3><span class="numero">13.</span>Primeiro acesso da equipe</h3><span class="duracao" aria-label="Duração">5:28</span></div>
+            <p>Criar a senha, conhecer a tela inicial com as funções do gabinete, os avisos e o envio automático para o gabinete.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>Dúvidas? Fale com o suporte pelo próprio aplicativo.</footer>
+
+  <script>
+    (function () {
+      var videos = Array.prototype.slice.call(document.querySelectorAll('video'));
+
+      // Um vídeo por vez: dar play em um pausa os outros.
+      videos.forEach(function (v) {
+        v.addEventListener('play', function () {
+          videos.forEach(function (outro) { if (outro !== v && !outro.paused) outro.pause(); });
+        });
+      });
+
+      // Em tela cheia no celular, deita a tela (Android/Chrome; o iPhone gira sozinho no player dele).
+      function aoMudarTelaCheia() {
+        var o = screen.orientation;
+        if (!o || typeof o.lock !== 'function') return;
+        if (document.fullscreenElement) {
+          o.lock('landscape').catch(function () {});
+        } else if (typeof o.unlock === 'function') {
+          try { o.unlock(); } catch (e) {}
+        }
+      }
+      document.addEventListener('fullscreenchange', aoMudarTelaCheia);
+    })();
+  </script>
+</body>
+</html>
